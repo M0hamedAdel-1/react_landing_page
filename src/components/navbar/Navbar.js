@@ -2,6 +2,7 @@ import React, { useContext, useState } from 'react'
 import logo from '../images/logo.png'
 import { Ismobilecontext } from '../../utiles/Ismobilecontext'
 import { motion } from 'framer-motion'
+import { Link } from 'react-router-dom'
 const Navbar = () => {
   const {Ismobile} = useContext(Ismobilecontext)
   const [activemenu,setactivemenu] = useState(false)
@@ -34,7 +35,7 @@ const Navbar = () => {
       </motion.div>
       <div className={`mobile-menu ${activemenu ? "active" :""} `}>
       <ul>
-            {links.map((link,index)=><a key={index} href='#' className={link.isactive?"active":""}>{link.link}</a>)}
+            {links.map((link,index)=><Link key={index} to="/" className={link.isactive?"active":""}>{link.link}</Link>)}
       </ul>
       </div>
       </>}
