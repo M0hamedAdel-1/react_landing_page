@@ -1,0 +1,228 @@
+// start navbar
+html{
+    overflow-x: hidden;
+}
+nav{
+    padding-inline: 2.5rem;
+    padding-block: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: absolute;
+    width: 100%;
+    z-index: 99;
+    left: 50%;
+    transform: translateX(-50%);
+    // overflow: hidden;
+    
+    .logo{
+        width: 6.75rem;
+        height: 3.049rem;
+    }
+    .menu{
+        ul{
+            display: flex;
+            align-items: center;
+            gap: 3rem;
+            a{
+                letter-spacing: 1px;
+                font-weight: 600;
+                font-size: 1.25rem;
+                text-transform: uppercase;
+                text-decoration: none;
+                color: $white;
+                &.active{
+                    color: $main-color;
+                }
+            }
+        }
+    }
+    .btn{
+        button{
+            text-transform: uppercase;
+            background-color: transparent;
+            padding: 10px 15px;
+            border-radius: 15px;
+            border:2px solid $main-color ;
+            color: $white;
+            cursor: pointer;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+            &::after{
+                transition: 0.5s ease-in-out;
+                position: absolute;
+                content: '';
+                top: 0;
+                left: 0;
+                background-color: $main-color;
+                width: 0;
+                height: 100%;
+                z-index: -1;
+                
+            }
+            &:hover{
+                &::after{
+                    width: 100%;
+                }
+            }
+        }
+    }
+    .bar{
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        gap: 0.5rem;
+        width: 2.5rem;
+        cursor: pointer;
+
+        & > *{
+            background-color: $white;
+            width: 2.5rem;
+            height: 3px;
+            transition: 0.4s;
+            
+            &:nth-of-type(2){
+                width: 1.5rem;
+            }
+        }
+        &:hover{
+            &>*{
+                width: 100%;
+            }
+        }
+       
+    }
+    .mobile-menu{
+        position: absolute;
+        background-color: $white;
+        height: fit-content;
+        padding-block: 1.5rem;
+        width: 25%;
+        right: -100%;
+        top: 4.5rem;
+        border-radius: 10px;
+        transition: 0.5s;
+        &.active{
+            right: 1rem;
+        }
+            ul{
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                flex-direction: column;
+                line-height: 3;
+                height: 100%;
+
+                a{
+                    text-decoration: none;
+                    text-transform: uppercase;
+                    color: black;
+                }
+            }
+    
+        
+    }
+    img{
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.banner{
+    
+    width: 100%;
+    position: relative;
+    height: 100vh;
+    .swiper, .swiper-wrapper,.swiper-slide{
+        height: 100%;
+
+    }
+    .banner-image{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        border-radius: 20px;
+        overflow: hidden;
+        
+        
+        img{
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.6;
+        }
+        .banner-text{
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%,-50%);
+            text-align: center;
+            color: white;
+            padding: 3.13rem;
+            width: 31.875rem;
+            margin-left:2.2rem ;
+            margin-right: 2.2rem;
+            h2{
+                color: $main-color;
+                font-size: 2rem;
+                font-weight: 400;
+            }
+            p{
+                line-height: 1.7;
+            }
+        }
+    }
+
+    .banner-gallary{
+        height: fit-content;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1.37rem;
+        position: absolute;
+        right: 3.13rem;
+        bottom: 1rem;
+        z-index: 10;
+        width: 35rem;
+
+        .gallary{
+            width: 10.5rem;
+            height: 15.65rem;
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgb(0, 0, 0,0.25);
+            cursor: pointer;
+            img{
+                width: 100%;
+                height: 100%;
+                object-fit: cover;
+            }
+        }
+    }
+}
+
+
+
+
+@media (min-width:1024px) {
+    nav{
+        padding-inline: 3.13rem;
+        padding-block: 1.73rem;
+
+    }
+    .banner{
+        .banner-image{
+
+            .banner-text{
+                position: absolute;
+                top: 50%;
+                left: unset;
+                transform: translateY(-50%);
+                text-align: start;
+            }
+        }
+    }
+    
+}
