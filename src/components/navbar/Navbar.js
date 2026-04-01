@@ -21,7 +21,7 @@ const Navbar = () => {
       {!Ismobile&&<>
         <motion.div initial={{opacity:0,y:20}}  whileInView={{opacity:1,y:0}} transition={{delay:0.5,duration:1}} className='menu'>
           <ul>
-            {links.map((link,index)=><a key={index} href='#' className={link.isactive?"active":""}>{link.link}</a>)}
+            {links.map((link,index)=><Link key={index} to='/' className={link.isactive?"active":""}>{link.link}</Link>)}
           </ul>
         </motion.div>
         <motion.div initial={{opacity:0,y:20}}  whileInView={{opacity:1,y:0}} transition={{delay:0.5,duration:1}}  className='btn'>
